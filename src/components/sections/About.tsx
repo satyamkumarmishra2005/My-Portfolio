@@ -44,13 +44,13 @@ export function About({
   return (
     <section
       id="about"
-      className="py-24 md:py-32 bg-bg-secondary relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 lg:py-32 bg-bg-secondary relative overflow-hidden"
       aria-label="About section"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent-purple/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-blue/5 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[600px] md:w-[800px] h-[250px] sm:h-[300px] md:h-[400px] bg-accent-purple/5 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[250px] sm:w-[300px] md:w-[400px] h-[250px] sm:h-[300px] md:h-[400px] bg-accent-blue/5 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
@@ -67,17 +67,17 @@ export function About({
           {/* About content with decorative elements */}
           <div className="relative">
             {/* Decorative quote mark */}
-            <div className="absolute -top-8 -left-4 text-8xl text-accent-blue/10 font-serif select-none">
+            <div className="absolute -top-6 sm:-top-8 -left-2 sm:-left-4 text-6xl sm:text-7xl md:text-8xl text-accent-blue/10 font-serif select-none">
               &ldquo;
             </div>
             
-            <div className="space-y-6 relative z-10">
+            <div className="space-y-4 sm:space-y-6 relative z-10">
               {paragraphs.map((paragraph, index) => (
                 <motion.p
                   key={index}
-                  className={`text-lg leading-relaxed ${
+                  className={`text-base sm:text-lg leading-relaxed ${
                     index === 0 
-                      ? 'text-text-primary text-xl font-medium' 
+                      ? 'text-text-primary sm:text-xl font-medium' 
                       : 'text-text-secondary'
                   }`}
                   variants={variants}

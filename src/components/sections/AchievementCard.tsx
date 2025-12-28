@@ -192,28 +192,28 @@ export function AchievementCard({ achievement }: AchievementCardProps): JSX.Elem
         <div className={`absolute -inset-[1px] bg-gradient-to-r ${gradientClass} rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500`} />
         
         {/* Solid background card for text readability */}
-        <div className="relative rounded-2xl bg-bg-secondary p-6 h-full border border-border-subtle group-hover:border-transparent transition-all duration-500">
+        <div className="relative rounded-2xl bg-bg-secondary p-4 sm:p-6 h-full border border-border-subtle group-hover:border-transparent transition-all duration-500">
           {/* Header with icon */}
-          <div className="flex items-start gap-4 mb-4">
+          <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
             {IconComponent && (
-              <div className={`p-3 rounded-xl bg-gradient-to-br ${gradientClass} flex-shrink-0`} data-testid="achievement-icon">
-                <IconComponent className="w-6 h-6 text-white" />
+              <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${gradientClass} flex-shrink-0`} data-testid="achievement-icon">
+                <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <h3 className="text-xl font-bold text-text-primary group-hover:gradient-text transition-all duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-text-primary group-hover:gradient-text transition-all duration-300 line-clamp-2">
                 {achievement.title}
               </h3>
-              <p className="text-accent-blue font-medium mt-1">
+              <p className="text-accent-blue font-medium mt-0.5 sm:mt-1 text-sm sm:text-base">
                 {achievement.event}
               </p>
             </div>
           </div>
 
           {/* Date badge */}
-          <div className="mb-4">
-            <span className="inline-flex items-center gap-2 text-text-muted text-sm font-medium px-3 py-1.5 bg-bg-tertiary rounded-full border border-border-subtle">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mb-3 sm:mb-4">
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 text-text-muted text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 bg-bg-tertiary rounded-full border border-border-subtle">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               {achievement.date}
@@ -226,21 +226,21 @@ export function AchievementCard({ achievement }: AchievementCardProps): JSX.Elem
           )}
 
           {/* Description */}
-          <p className="text-text-secondary text-sm leading-relaxed">
+          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
             {achievement.description}
           </p>
 
           {/* Optional link */}
           {achievement.link && (
-            <div className="mt-4 pt-4 border-t border-border-subtle">
+            <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-border-subtle">
               <a
                 href={achievement.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-cyan hover:text-accent-blue transition-colors duration-300 text-sm font-medium"
+                className="inline-flex items-center gap-2 text-accent-cyan hover:text-accent-blue transition-colors duration-300 text-xs sm:text-sm font-medium touch-manipulation active:scale-95"
               >
                 Learn more
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>

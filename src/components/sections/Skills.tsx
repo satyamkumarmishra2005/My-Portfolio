@@ -57,13 +57,13 @@ export function Skills({ categories = skillsData }: SkillsSectionProps): JSX.Ele
   return (
     <section
       id="skills"
-      className="py-24 md:py-32 bg-bg-primary relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-24 lg:py-32 bg-bg-primary relative overflow-hidden"
       aria-label="Skills section"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-accent-blue/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-accent-purple/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 -left-16 sm:-left-32 w-48 sm:w-64 h-48 sm:h-64 bg-accent-blue/10 rounded-full blur-[80px] sm:blur-[100px]" />
+        <div className="absolute bottom-1/4 -right-16 sm:-right-32 w-48 sm:w-64 h-48 sm:h-64 bg-accent-purple/10 rounded-full blur-[80px] sm:blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
@@ -77,7 +77,7 @@ export function Skills({ categories = skillsData }: SkillsSectionProps): JSX.Ele
             </SectionHeading>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {categories.map((category) => (
               <motion.article
                 key={category.id}
@@ -86,20 +86,20 @@ export function Skills({ categories = skillsData }: SkillsSectionProps): JSX.Ele
                 aria-labelledby={`category-${category.id}`}
               >
                 {/* Gradient border effect */}
-                <div className={`absolute -inset-[1px] bg-gradient-to-r ${categoryColors[category.id] || 'from-accent-blue to-accent-purple'} rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500`} />
+                <div className={`absolute -inset-[1px] bg-gradient-to-r ${categoryColors[category.id] || 'from-accent-blue to-accent-purple'} rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500`} />
                 
                 {/* Solid background card for text readability */}
-                <div className="relative rounded-2xl bg-bg-secondary p-6 h-full border border-border-subtle group-hover:border-transparent transition-all duration-500">
+                <div className="relative rounded-xl sm:rounded-2xl bg-bg-secondary p-4 sm:p-6 h-full border border-border-subtle group-hover:border-transparent transition-all duration-500">
                   {/* Category header */}
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className={`p-2.5 rounded-xl bg-gradient-to-br ${categoryColors[category.id] || 'from-accent-blue to-accent-purple'}`}>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5">
+                    <div className={`p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-gradient-to-br ${categoryColors[category.id] || 'from-accent-blue to-accent-purple'}`}>
                       {categoryIcons[category.id] || (
-                        <div className="w-6 h-6 rounded-full bg-white/20" />
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20" />
                       )}
                     </div>
                     <h3
                       id={`category-${category.id}`}
-                      className="text-xl font-semibold text-text-primary"
+                      className="text-lg sm:text-xl font-semibold text-text-primary"
                     >
                       {category.name}
                     </h3>
@@ -107,7 +107,7 @@ export function Skills({ categories = skillsData }: SkillsSectionProps): JSX.Ele
 
                   {/* Skills grid */}
                   <div
-                    className="flex flex-wrap gap-2.5"
+                    className="flex flex-wrap gap-1.5 sm:gap-2.5"
                     role="list"
                     aria-label={`${category.name} skills`}
                   >

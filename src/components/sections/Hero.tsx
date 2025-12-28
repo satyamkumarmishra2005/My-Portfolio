@@ -145,30 +145,30 @@ export function Hero({
       >
         {/* Decorative badge */}
         <motion.div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card mb-6 sm:mb-8"
           variants={fadeInUp}
         >
           <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse" />
-          <span className="text-sm text-text-secondary">Available for opportunities</span>
+          <span className="text-xs sm:text-sm text-text-secondary">Available for opportunities</span>
         </motion.div>
 
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight whitespace-nowrap"
+          className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 tracking-tight"
           variants={fadeInUp}
         >
-          <span className="text-text-primary">Hi, I&apos;m </span>
-          <AnimatedName text={name} className="gradient-text whitespace-nowrap" />
+          <span className="text-text-primary block sm:inline">Hi, I&apos;m </span>
+          <AnimatedName text={name} className="gradient-text block sm:inline whitespace-nowrap" />
         </motion.h1>
 
         <motion.p
-          className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6"
           variants={fadeInUp}
         >
           <span className="text-text-secondary">{title}</span>
         </motion.p>
 
         <motion.p
-          className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-10"
+          className="text-base sm:text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
           variants={fadeInUp}
         >
           {tagline}
@@ -176,16 +176,16 @@ export function Hero({
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0"
           variants={fadeInUp}
         >
           <a
             href="#projects"
-            className="group relative px-8 py-4 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105"
+            className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
           >
             <div className="absolute inset-0 bg-gradient-primary opacity-100 group-hover:opacity-90 transition-opacity" />
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink animate-shimmer" />
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               View My Work
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -194,7 +194,7 @@ export function Hero({
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 rounded-xl font-semibold text-text-primary glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-text-primary glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation text-center"
           >
             Get In Touch
           </a>

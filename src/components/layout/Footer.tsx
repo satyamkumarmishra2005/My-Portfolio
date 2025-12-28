@@ -55,36 +55,36 @@ export function Footer(): JSX.Element {
     <footer className="relative bg-bg-secondary border-t border-border-subtle overflow-hidden" role="contentinfo">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-blue/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] md:w-[600px] h-[200px] sm:h-[250px] md:h-[300px] bg-accent-blue/5 rounded-full blur-[80px] sm:blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-center">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <a href="#hero" className="inline-flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center text-white font-bold">
+          <div className="text-center sm:text-left order-2 sm:order-1">
+            <a href="#hero" className="inline-flex items-center gap-2 group touch-manipulation">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center text-white font-bold text-sm sm:text-base">
                 {heroContent.name.charAt(0)}
               </div>
-              <span className="text-xl font-bold text-text-primary group-hover:gradient-text transition-all duration-300">
+              <span className="text-lg sm:text-xl font-bold text-text-primary group-hover:gradient-text transition-all duration-300">
                 {heroContent.name.split(' ')[0]}
               </span>
             </a>
-            <p className="text-text-muted text-sm mt-3 max-w-xs mx-auto md:mx-0">
+            <p className="text-text-muted text-xs sm:text-sm mt-2 sm:mt-3 max-w-xs mx-auto sm:mx-0">
               Building scalable backend systems and cloud infrastructure.
             </p>
           </div>
 
           {/* Social Links */}
-          <nav aria-label="Social media links" className="flex justify-center">
-            <ul className="flex items-center gap-3">
+          <nav aria-label="Social media links" className="flex justify-center order-1 sm:order-2">
+            <ul className="flex items-center gap-2 sm:gap-3">
               {socialLinks.map((link) => (
                 <li key={link.label}>
                   <motion.a
                     href={link.href}
                     target={link.href.startsWith('mailto:') ? undefined : '_blank'}
                     rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                    className="group relative flex items-center justify-center w-12 h-12 rounded-xl glass-card text-text-secondary hover:text-white transition-all duration-300 overflow-hidden"
+                    className="group relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl glass-card text-text-secondary hover:text-white transition-all duration-300 overflow-hidden touch-manipulation active:scale-95"
                     aria-label={`${link.label}${link.href.startsWith('mailto:') ? '' : ' (opens in new tab)'}`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -98,26 +98,26 @@ export function Footer(): JSX.Element {
           </nav>
 
           {/* Copyright */}
-          <div className="text-center md:text-right">
-            <p className="text-text-secondary text-sm">
+          <div className="text-center sm:text-right order-3">
+            <p className="text-text-secondary text-xs sm:text-sm">
               © {currentYear ?? '2025'} {heroContent.name}
             </p>
           </div>
         </div>
 
         {/* Back to top */}
-        <div className="mt-10 pt-8 border-t border-border-subtle text-center">
+        <div className="mt-6 sm:mt-8 md:mt-10 pt-6 sm:pt-8 border-t border-border-subtle text-center">
           <motion.a
             href="#hero"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 text-text-muted hover:text-accent-blue transition-colors duration-300 text-sm group"
+            className="inline-flex items-center gap-2 text-text-muted hover:text-accent-blue transition-colors duration-300 text-xs sm:text-sm group touch-manipulation"
             aria-label="Back to top of page"
             whileHover={{ y: -2 }}
           >
-            <svg className="w-4 h-4 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
             Back to top
