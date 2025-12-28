@@ -41,6 +41,7 @@ export function Contact({
       await onSubmit(data);
     } else {
       // Send email directly from client using Web3Forms
+      // Note: Client-side is required because Web3Forms blocks server-side requests via Cloudflare
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -48,7 +49,7 @@ export function Contact({
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: '5f9be062-690d-4579-adc4-35f4c3461f64',
+          access_key: '36b5a074-78c1-4267-abb7-b5c54b8f00fc',
           name: data.name,
           email: data.email,
           message: data.message,

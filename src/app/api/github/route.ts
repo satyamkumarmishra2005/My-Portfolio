@@ -89,30 +89,39 @@ export async function GET(request: Request) {
       .slice(0, 5);
 
     // Fetch contributions from third-party API (doesn't need token)
+    // Fetch ALL years to get total contributions
     let totalContributions = 0;
     let currentStreak = 0;
     let longestStreak = 0;
 
     try {
-      const currentYear = new Date().getFullYear();
-      const contribRes = await fetch(
-        `https://github-contributions-api.jogruber.de/v4/${username}?y=${currentYear}`,
+      // First, fetch all years to get total contributions
+      const allYearsRes = await fetch(
+        `https://github-contributions-api.jogruber.de/v4/${username}`,
         { cache: 'no-store' }
       );
 
-      if (contribRes.ok) {
-        const contribData = await contribRes.json();
-        if (contribData.total?.[currentYear]) {
-          totalContributions = contribData.total[currentYear];
+      if (allYearsRes.ok) {
+        const allYearsData = await allYearsRes.json();
+        
+        // Sum up contributions from all years
+        if (allYearsData.total) {
+          totalContributions = Object.values(allYearsData.total as Record<string, number>).reduce(
+            (sum: number, count: number) => sum + count,
+            0
+          );
         }
 
-        // Calculate streaks
-        if (contribData.contributions) {
-          const contributions = contribData.contributions as { date: string; count: number }[];
+        // Calculate streaks from all contributions
+        if (allYearsData.contributions) {
+          const contributions = allYearsData.contributions as { date: string; count: number }[];
           const today = new Date().toISOString().split('T')[0];
           const validContribs = contributions.filter((c) => c.date <= today);
 
-          // Current streak
+          // Sort by date to ensure correct order
+          validContribs.sort((a, b) => a.date.localeCompare(b.date));
+
+          // Current streak (count backwards from today)
           let tempStreak = 0;
           for (let i = validContribs.length - 1; i >= 0; i--) {
             if (validContribs[i].count > 0) {
