@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteMetadata.title}`,
   },
   description: siteMetadata.description,
+  icons: {
+    icon: '/MyIMG.png',
+    shortcut: '/MyIMG.png',
+    apple: '/MyIMG.png',
+  },
   keywords: [
     "backend engineer",
     "platform engineer",

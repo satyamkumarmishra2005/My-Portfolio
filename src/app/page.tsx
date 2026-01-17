@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Hero, About, Skills, Achievements, Projects, /* Experience, */ Contact } from "@/components/sections";
+import { Hero, About, Skills, Achievements, Projects, /* Experience, */ Contact, Blogs } from "@/components/sections";
 import { skillsData } from "@/data/skills";
 import { achievementsData } from "@/data/achievements";
 import { projectsData } from "@/data/projects";
@@ -30,6 +30,7 @@ export default function Home() {
         <Achievements achievements={achievementsData} />
         <Projects projects={projectsData} />
         {/* <Experience experiences={experienceData} /> */}
+        <Blogs />
         <Contact
           heading={contactContent.heading}
           description={contactContent.description}

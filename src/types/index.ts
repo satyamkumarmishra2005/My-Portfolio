@@ -104,3 +104,19 @@ export interface Achievement {
   category?: 'hackathon' | 'competition' | 'certification' | 'award';
   images?: string[]; // Array of image paths for gallery
 }
+
+/**
+ * Represents a blog post from dev.to
+ * Requirements: 3.1, 4.1, 4.2, 4.3
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  coverImage: string | null;
+  socialImage: string | null;
+  publishedAt: string;
+  readingTimeMinutes: number;
+  tags: string[];
+}

@@ -128,7 +128,7 @@ function ImageGallery({ images, gradientClass }: { images: string[]; gradientCla
           {images.length > 1 && (
             <>
               <motion.button
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-3 min-w-[44px] min-h-[44px] rounded-full bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all touch-manipulation active:scale-95 flex items-center justify-center"
                 onClick={() => setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -142,7 +142,7 @@ function ImageGallery({ images, gradientClass }: { images: string[]; gradientCla
                 </svg>
               </motion.button>
               <motion.button
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-3 min-w-[44px] min-h-[44px] rounded-full bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all touch-manipulation active:scale-95 flex items-center justify-center"
                 onClick={() => setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -176,20 +176,26 @@ function ImageGallery({ images, gradientClass }: { images: string[]; gradientCla
 
       {/* Enhanced thumbnail dots */}
       {images.length > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-3 mt-4">
           {images.map((_, index) => (
             <motion.button
               key={index}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className={`min-w-[44px] min-h-[44px] rounded-full transition-all duration-300 flex items-center justify-center touch-manipulation active:scale-95 ${
                 index === activeIndex 
-                  ? `bg-gradient-to-r ${gradientClass} w-8` 
-                  : 'bg-border-subtle hover:bg-text-muted w-1.5'
+                  ? 'bg-bg-tertiary/50' 
+                  : 'bg-transparent hover:bg-bg-tertiary/30'
               }`}
               onClick={() => setActiveIndex(index)}
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label={`Go to image ${index + 1}`}
-            />
+            >
+              <span className={`h-2 rounded-full transition-all duration-300 ${
+                index === activeIndex 
+                  ? `bg-gradient-to-r ${gradientClass} w-6` 
+                  : 'bg-border-subtle hover:bg-text-muted w-2'
+              }`} />
+            </motion.button>
           ))}
         </div>
       )}
@@ -309,7 +315,7 @@ export function AchievementCard({ achievement, index = 0 }: AchievementCardProps
               href={achievement.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r ${gradients.bg} text-white hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95`}
+              className={`inline-flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-xl text-sm font-semibold bg-gradient-to-r ${gradients.bg} text-white hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation`}
             >
               Learn more
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

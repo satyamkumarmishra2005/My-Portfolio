@@ -11,7 +11,18 @@ const nextConfig = {
     // Minimize image size
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     // Allow external image domains if needed
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media2.dev.to',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dev-to-uploads.s3.amazonaws.com',
+        pathname: '/**',
+      },
+    ],
   },
 
   // Enable React strict mode for better development experience

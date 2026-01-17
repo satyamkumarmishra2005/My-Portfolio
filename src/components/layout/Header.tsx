@@ -16,6 +16,7 @@ const navItems: NavItem[] = [
   { label: 'Achievements', href: '#achievements' },
   { label: 'Projects', href: '#projects' },
   // { label: 'Experience', href: '#experience' },
+  { label: 'Blogs', href: '#blogs' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -153,7 +154,7 @@ export function Header(): JSX.Element {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="md:hidden p-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-white/5 transition-all duration-300"
+              className="md:hidden p-3 min-w-[44px] min-h-[44px] rounded-xl text-text-secondary hover:text-text-primary hover:bg-white/5 transition-all duration-300 touch-manipulation active:scale-95"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
@@ -197,7 +198,7 @@ export function Header(): JSX.Element {
                       <a
                         href={item.href}
                         onClick={(e) => scrollToSection(e, item.href)}
-                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                        className={`block px-4 py-3.5 min-h-[44px] rounded-xl text-base font-medium transition-all duration-300 touch-manipulation active:scale-[0.98] ${
                           activeSection === item.href.slice(1)
                             ? 'text-text-primary bg-gradient-to-r from-accent-blue/20 to-accent-purple/20 border border-accent-blue/30'
                             : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
@@ -217,7 +218,7 @@ export function Header(): JSX.Element {
                     <a
                       href="#contact"
                       onClick={(e) => scrollToSection(e, '#contact')}
-                      className="flex-1 block px-4 py-3 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-accent-blue to-accent-purple text-center"
+                      className="flex-1 block px-4 py-3.5 min-h-[44px] rounded-xl text-base font-semibold text-white bg-gradient-to-r from-accent-blue to-accent-purple text-center touch-manipulation active:scale-[0.98]"
                     >
                       Hire Me
                     </a>

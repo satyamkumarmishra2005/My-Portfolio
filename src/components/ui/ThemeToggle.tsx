@@ -15,7 +15,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="relative p-2 rounded-xl glass-card transition-all duration-300"
+        className="relative p-3 min-w-[44px] min-h-[44px] rounded-xl glass-card transition-all duration-300 touch-manipulation"
         aria-label="Toggle theme"
       >
         <div className="w-5 h-5" />
@@ -32,7 +32,7 @@ function ThemeToggleInner() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative p-2 rounded-xl glass-card hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300"
+      className="relative p-3 min-w-[44px] min-h-[44px] rounded-xl glass-card hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300 touch-manipulation active:scale-95"
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >

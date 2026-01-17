@@ -6,6 +6,8 @@ export { Achievements } from './Achievements';
 export { AchievementCard } from './AchievementCard';
 export { Projects } from './Projects';
 export { ProjectCard } from './ProjectCard';
+export { Blogs } from './Blogs';
+export { BlogCard } from './BlogCard';
 export { Experience } from './Experience';
 export { ExperienceCard } from './ExperienceCard';
 export { Contact } from './Contact';
