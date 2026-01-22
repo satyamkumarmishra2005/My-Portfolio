@@ -229,7 +229,7 @@ export function Hero({
                 </span>
               </a>
               <a
-                href="/Satyam editing resume.pdf"
+                href="/Satyam resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-text-primary glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation text-center flex items-center justify-center gap-2"
