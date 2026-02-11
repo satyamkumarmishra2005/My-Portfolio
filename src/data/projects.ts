@@ -55,7 +55,7 @@ export const projectsData: Project[] = [
       'Delivered clean, human-centric dashboard for real-time health visibility',
       'Implemented secure cloud storage for medical documents with structured metadata',
     ],
-    githubUrl: 'https://github.com/satyamkumarmishra2005/medisort',
+    githubUrl: 'https://github.com/satyamkumarmishra2005/Medisort-fullstack',
     // liveUrl: 'https://cache-demo.example.com',
     // diagramUrl: '/diagrams/distributed-cache-architecture.svg',
   },
